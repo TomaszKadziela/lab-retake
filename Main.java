@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
+
     private static BookManager bookManager = new BookManager();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         while (true) {
             printMenu();
             int choice = Integer.parseInt(scanner.nextLine());
@@ -32,6 +34,7 @@ public class Main {
     }
 
     private static void printMenu() {
+
         System.out.println("[1] Add book");
         System.out.println("[2] Remove book");
         System.out.println("[3] Update book");
@@ -41,6 +44,7 @@ public class Main {
     }
 
     private static void addBook() {
+
         System.out.print("Enter title: ");
         String title = scanner.nextLine();
         System.out.print("Enter author: ");
@@ -56,6 +60,7 @@ public class Main {
     }
 
     private static void removeBook() {
+
         System.out.print("Enter ISBN of the book to remove: ");
         String isbn = scanner.nextLine();
         bookManager.removeBook(isbn);
@@ -63,6 +68,7 @@ public class Main {
     }
 
     private static void updateBook() {
+
         System.out.print("Enter ISBN of the book to update: ");
         String isbn = scanner.nextLine();
 
@@ -79,6 +85,7 @@ public class Main {
     }
 
     private static void listBooks() {
+        
         System.out.println("Listing books:");
         for (Book book : bookManager.getBooks()) {
             System.out.println(book);
